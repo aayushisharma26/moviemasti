@@ -30,6 +30,38 @@ let movieget = async(req,res)=>{
     }
 }
 
+const movieId = async(req,res)=>{
+    try{
+        const user = await Movie.findById(req.params.id);
+        res.send({
+            message:"done",
+            d : user
+        })
+            
+    }catch (err){
+        res.send({message:err}).status(401)
+
+    }
+}    
 
 
-export {moviepost,movieget}
+
+
+
+const movieDelete = async (req,res)=>{
+    try{
+        const id = req.params.id;
+        const data = await Movie.findByIdAndDelete(id);
+        res.json({
+            message:"Done",
+            result:data
+        })
+
+    }catch{
+
+    }
+
+}
+
+
+export {moviepost,movieget,movieId,movieDelete}
