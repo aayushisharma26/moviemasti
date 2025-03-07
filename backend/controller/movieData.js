@@ -57,11 +57,33 @@ const movieDelete = async (req,res)=>{
             result:data
         })
 
-    }catch{
+    }catch (err){
+        res.send({message:err}).status(401)
 
     }
 
 }
 
 
-export {moviepost,movieget,movieId,movieDelete}
+
+
+const movieUpdate = async(req,res)=>{
+    try{
+        let id = req.params.id;
+        let updateMovie = await Movie.findByIdAndUpdate(id,req.body,{ new: true });
+        res.send(updateMovie)   
+        console.log(updateMovie)           
+
+    }catch (err){
+        res.send({message:err}).status(401)
+        console.log(err)
+
+    }
+}
+
+
+
+
+
+
+export {moviepost,movieget,movieId,movieDelete,movieUpdate}

@@ -1,4 +1,4 @@
-import {moviepost,movieget,movieId,movieDelete} from '../controller/movieData.js'
+import {moviepost,movieget,movieId,movieDelete,movieUpdate} from '../controller/movieData.js'
 
 import express from "express";
 const router = express.Router();
@@ -13,5 +13,6 @@ router.get("/get/:id",movieId)
 router.delete("/delete/:id",movieDelete)
 
 
+router.put("/put/:id",movieUpdate)
 
 export default router;
