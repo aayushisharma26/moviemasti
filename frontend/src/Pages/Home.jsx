@@ -7,7 +7,7 @@ const Home = () => {
 
     useEffect(() => {
         let dat = async () => {
-            let d = await fetch("https://moviemasti-ten.vercel.app//movie/get");
+            let d = await fetch("https://moviemasti-ten.vercel.app/movie/get");
             let c = await d.json();
             console.log(c);
             setData(c);
