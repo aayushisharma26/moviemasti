@@ -2,10 +2,13 @@ import express from "express";
 import dotenv from "dotenv"
 import mongoose from "mongoose";
 import movieRouter from "./router/moviedataRoute.js"
+import cors from 'cors';
+
 dotenv.config();
 
 const app = express();
 app.use(express.json())
+app.use(cors());
 
 
 const PORT = process.env.PORT ||5000
@@ -31,3 +34,4 @@ app.listen(PORT ,()=>{
 // PORT = 5000
 
 // MONGO_URL = mongodb+srv://aayushisharma1:Navgurukul123@cluster0.jfztl.mongodb.net/movieData
+//https://moviemasti-ten.vercel.app/

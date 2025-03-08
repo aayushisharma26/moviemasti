@@ -15,7 +15,11 @@ const MovieData = new mongoose.Schema({
     poster:{
         type:String
 
+    },
+    genre:{
+        type:[String]
     }
+
 
 })
     
